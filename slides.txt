@@ -1,0 +1,89 @@
+EDGE AI — AI TUTOR DEMO
+Whiteboard Slide Content
+Topic: Sentence Structure & Coherence
+Passage Theme: Ghana's Independence
+Learner: Derek | JHS 3
+================================================
+
+
+SLIDE 1 — Introduction
+-----------------------
+📖 Today's Topic
+
+Sentence Structure & Coherence
+
+By the end of this session:
+✦ Identify subject & predicate
+✦ Spot incoherent sentences
+✦ Rewrite weak sentences clearly
+
+
+SLIDE 2 — Concept: What Makes a Sentence Complete?
+---------------------------------------------------
+What makes a sentence complete?
+
+Every sentence needs:
+
+SUBJECT → Who or what
+PREDICATE → What they do or are
+
+Example:
+"Kwame Nkrumah [SUBJECT]
+ led Ghana to independence. [PREDICATE]"
+
+
+SLIDE 3 — Passage: Ghana's Independence (With Problem Sentences)
+----------------------------------------------------------------
+📄 Read this passage carefully:
+
+"Ghana gained independence on the 6th of March, 1957.
+ Declared by Kwame Nkrumah at the Old Polo Grounds in Accra.
+ The people were very.
+ Ghana was the first country in sub-Saharan Africa
+ independent became from colonial rule by the British
+ who had controlled it for many years before then."
+
+⚠ Can you spot the problems?
+
+--- HIGHLIGHTS (shown in amber) ---
+1. "Declared by Kwame Nkrumah at the Old Polo Grounds in Accra."
+   → Missing subject. Incomplete sentence.
+
+2. "The people were very."
+   → Incomplete predicate. Sentence cuts off.
+
+3. "independent became from colonial rule by the British
+    who had controlled it for many years before then."
+   → Incoherent, overloaded structure. Meaning is lost.
+
+
+SLIDE 4 — Corrections: Let's Fix It Together
+---------------------------------------------
+✏ Let's fix it together
+
+✗ "Declared by Kwame Nkrumah at the Old Polo Grounds."
+✓ "Kwame Nkrumah declared independence at the
+    Old Polo Grounds in Accra."
+
+✗ "The people were very."
+✓ "The people were very joyful."
+
+✗ Overloaded, jumbled sentence
+✓ "Ghana became the first independent country in
+    sub-Saharan Africa, ending years of British
+    colonial rule."
+
+
+SLIDE 5 — Practice: Your Turn
+------------------------------
+✍ Your Turn
+
+Rewrite this sentence clearly:
+
+"Nkrumah the people freedom gave independence
+ Ghana on the day of march sixth."
+
+Think:
+→ Who is the subject?
+→ What did they do?
+→ When did it happen?
