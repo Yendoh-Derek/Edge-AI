@@ -103,6 +103,7 @@ body {
     "Segoe UI", sans-serif;
 }
 
+<<<<<<< HEAD
 html {
   scroll-behavior: smooth;
 }
@@ -114,5 +115,37 @@ html {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+=======
+@keyframes edge-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.edge-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.edge-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: edge-marquee 18s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edge-marquee__track {
+    animation: none;
+    transform: none;
+>>>>>>> db1c20f (Update Hero and Home page for better UI UX experience)
   }
 }

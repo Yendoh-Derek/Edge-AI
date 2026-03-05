@@ -13,11 +13,11 @@ export function BrandLogo({ compact, className = "", ...props }: BrandLogoProps)
       {...props}
     >
       <Link href="/" className="inline-flex">
-        <span className="inline-flex items-baseline gap-1">
-          <span className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">
+        <span className="inline-flex items-baseline gap-1.5">
+          <span className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
             Edge
           </span>
-          <span className="rounded-full bg-brand px-2 py-0.5 text-xs font-semibold uppercase tracking-[0.2em] text-surface-elevated shadow-sm md:text-[0.7rem]">
+          <span className="rounded-full bg-brand px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-surface-elevated shadow-sm md:text-[0.75rem]">
             AI
           </span>
         </span>

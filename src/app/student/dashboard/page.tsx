@@ -14,7 +14,7 @@ export default function StudentDashboardPage() {
   };
 
   return (
-    <main className="min-h-[100svh]">
+    <main className="flex min-h-[100svh] flex-col">
       <TopNav
         rightSlot={
           <>
@@ -41,12 +41,12 @@ export default function StudentDashboardPage() {
         }
       />
 
-          <div className="mx-auto max-w-6xl px-4 pb-10 pt-6 md:px-6 md:pt-8">
+      <div className="mx-auto flex w-full max-w-6xl flex-1 px-4 pb-10 pt-6 md:px-6 md:pt-8">
         <motion.section
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, ease: "easeOut" }}
-          className="space-y-6"
+          className="flex w-full flex-col space-y-6"
         >
           <Card className="relative overflow-hidden border border-border-subtle/60 bg-gradient-to-br from-brand-soft/50 via-surface to-surface-elevated p-5 shadow-sm/40 backdrop-blur-md md:p-6">
             <div className="pointer-events-none absolute -left-8 -top-10 h-40 w-40 rounded-full bg-brand-soft blur-3xl" />
@@ -74,31 +74,33 @@ export default function StudentDashboardPage() {
             </div>
           </Card>
 
-          <div className="grid gap-4 md:grid-cols-3">
-            <ActionCard
-              href="/student/assessment"
-              iconSrc="/images/diagnose.png"
-              alt="Diagnostic assessment icon"
-              title="Diagnostic Assessment"
-              description="Find your exact literacy and numeracy skill levels. ~15 mins."
-              meta="Adaptive · Immediate feedback"
-            />
-            <ActionCard
-              href="/student/tutor"
-              iconSrc="/images/ai_tutor.png"
-              alt="AI tutor icon"
-              title="AI Tutor Session"
-              description="Study any topic with your personal AI tutor."
-              meta="Voice or text · Step-by-step"
-            />
-            <ActionCard
-              href="/student/results"
-              iconSrc="/images/progress.jpg"
-              alt="Progress chart icon"
-              title="My Progress"
-              description="View your skill mastery map and track improvement."
-              meta="Skill gaps · Growth over time"
-            />
+          <div className="flex flex-1 items-center">
+            <div className="grid w-full gap-4 md:grid-cols-3">
+              <ActionCard
+                href="/student/assessment"
+                iconSrc="/images/diagnose.png"
+                alt="Diagnostic assessment icon"
+                title="Diagnostic Assessment"
+                description="Find your exact literacy and numeracy skill levels. ~15 mins."
+                meta="Adaptive · Immediate feedback"
+              />
+              <ActionCard
+                href="/student/tutor"
+                iconSrc="/images/ai_tutor.png"
+                alt="AI tutor icon"
+                title="AI Tutor Session"
+                description="Study any topic with your personal AI tutor."
+                meta="Voice or text · Step-by-step"
+              />
+              <ActionCard
+                href="/student/results"
+                iconSrc="/images/progress.jpg"
+                alt="Progress chart icon"
+                title="My Progress"
+                description="View your skill mastery map and track improvement."
+                meta="Skill gaps · Growth over time"
+              />
+            </div>
           </div>
         </motion.section>
       </div>
