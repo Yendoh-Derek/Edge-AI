@@ -1,18 +1,10 @@
 "use client";
 
-<<<<<<< HEAD
-import { motion } from "framer-motion";
-=======
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
->>>>>>> db1c20f (Update Hero and Home page for better UI UX experience)
 import Link from "next/link";
 import { BrandLogo } from "../components/brand-logo";
-import { AnimatedBackground } from "../components/animated-background";
-import { HeroHeadline } from "../components/hero-headline";
-import { RoleCard } from "../components/role-card";
-import { MicroHighlight } from "../components/micro-highlight";
-import { ImageCarousel } from "../components/image-carousel";
+import { Card } from "../components/ui/card";
 
 const navItems = [
   { label: "Prices", href: "#prices" },
@@ -24,89 +16,24 @@ const navItems = [
 
 export default function Home() {
   return (
-    <main className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col px-4 pb-10 pt-5 md:px-6 md:pt-10">
-      <AnimatedBackground />
-
-      <motion.nav
-        initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="relative z-20 flex items-center justify-between border-b border-white/10 pb-4 md:pb-6 backdrop-blur-sm"
-      >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4 }}
-        >
-          <BrandLogo compact />
-        </motion.div>
-        <ul className="flex flex-wrap items-center gap-x-8 gap-y-2 text-xs text-muted md:gap-x-10 md:text-sm">
-          {navItems.map(({ label, href }, index) => (
-            <motion.li
-              key={label}
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + index * 0.06, duration: 0.4 }}
-            >
+    <main className="mx-auto flex min-h-[100svh] max-w-6xl flex-col px-4 pb-10 pt-5 md:px-6 md:pt-10">
+      <nav className="flex items-center justify-between border-b border-border-subtle/70 pb-4 md:pb-5">
+        <BrandLogo compact />
+        <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted md:gap-x-8 md:text-sm">
+          {navItems.map(({ label, href }) => (
+            <li key={label}>
               <Link
                 href={href}
-                className="relative group transition-colors hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded-sm"
+                className="rounded-sm transition-colors hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
               >
                 {label}
-                <motion.span
-                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-brand to-brand/50"
-                  initial={{ width: 0 }}
-                  whileHover={{ width: "100%" }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                />
               </Link>
-            </motion.li>
+            </li>
           ))}
         </ul>
-      </motion.nav>
+      </nav>
 
       <motion.section
-<<<<<<< HEAD
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="relative z-10 flex flex-1 flex-col gap-16 pt-10 md:pt-16 lg:pt-20"
-      >
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="space-y-8">
-            <HeroHeadline />
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              <RoleCard
-                iconSrc="/images/ai_tutor.png"
-                alt="Teacher icon"
-                title="Teacher"
-                description="Identify learning gaps, guide remediation, track progress with precision."
-                href="/login/teacher"
-                index={0}
-              />
-              <RoleCard
-                iconSrc="/images/student.png"
-                alt="Student icon"
-                title="Student"
-                description="Take assessments and learn with personalized, adaptive guidance."
-                href="/login/student"
-                index={1}
-              />
-            </div>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.4 }}
-              className="pt-4 text-[0.7rem] text-muted font-medium tracking-wider uppercase"
-            >
-              Prototype — Designed for Ghanaian classrooms
-            </motion.p>
-          </div>
-
-          <ImageCarousel />
-=======
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
@@ -143,38 +70,12 @@ export default function Home() {
         <div className="mt-6 flex flex-1 flex-col items-center justify-center gap-4 md:mt-0">
           <GeometricHeroCanvas />
           <ScrollingHighlights />
->>>>>>> db1c20f (Update Hero and Home page for better UI UX experience)
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-          className="grid gap-3 text-xs text-muted md:grid-cols-3"
-        >
-          <MicroHighlight
-            label="Instant Diagnostics"
-            description="Comprehensive skill mapping across numeracy and literacy domains."
-            index={0}
-          />
-          <MicroHighlight
-            label="Teacher Control"
-            description="Full visibility and agency over learner progress and remediation."
-            index={1}
-          />
-          <MicroHighlight
-            label="Built for Ghana"
-            description="Culturally relevant contexts and examples for every classroom."
-            index={2}
-          />
-        </motion.div>
       </motion.section>
     </main>
   );
 }
 
-<<<<<<< HEAD
-=======
 type RoleCardProps = {
   iconSrc: string;
   alt: string;
@@ -191,30 +92,31 @@ function RoleCard({ iconSrc, alt, title, href }: RoleCardProps) {
         transition={{ duration: 0.45, ease: "easeOut" }}
       >
         <Card className="flex h-full flex-col justify-between gap-4 border border-border-subtle/70 bg-surface-elevated/90 p-4 shadow-sm/40 backdrop-blur-md transition-transform duration-200 hover:-translate-y-[2px] hover:border-brand-soft/80 hover:shadow-md md:p-5">
-        <div className="flex items-center gap-3">
-          <div className="grid h-11 w-11 place-items-center rounded-2xl bg-brand-soft/60 shadow-sm ring-1 ring-white/40">
-            <Image
-              src={iconSrc}
-              alt={alt}
-              width={32}
-              height={32}
-              className="h-8 w-8 object-contain"
-            />
+          <div className="flex items-center gap-3">
+            <div className="grid h-11 w-11 place-items-center rounded-2xl bg-brand-soft/60 shadow-sm ring-1 ring-white/40">
+              <Image
+                src={iconSrc}
+                alt={alt}
+                width={32}
+                height={32}
+                className="h-8 w-8 object-contain"
+              />
+            </div>
+            <div>
+              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-muted">
+                {title === "Teacher" ? "For Teachers" : "For Learners"}
+              </p>
+              <p className="text-base font-semibold text-foreground md:text-lg">{title}</p>
+            </div>
           </div>
-          <div>
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-muted">
-              {title === "Teacher" ? "For Teachers" : "For Learners"}
-            </p>
-            <p className="text-base font-semibold text-foreground md:text-lg">{title}</p>
+
+          <div className="mt-1 flex items-center justify-between text-sm font-semibold tracking-tight text-brand md:text-base">
+            <span className="inline-flex items-center gap-1">
+              {title === "Teacher" ? "Enter teacher space" : "Enter learner space"}
+            </span>
+            <span className="transition-transform group-hover:translate-x-0.5">→</span>
           </div>
-        </div>
-        <div className="mt-1 flex items-center justify-between text-sm font-semibold tracking-tight text-brand md:text-base">
-          <span className="inline-flex items-center gap-1">
-            {title === "Teacher" ? "Enter teacher space" : "Enter learner space"}
-          </span>
-          <span className="transition-transform group-hover:translate-x-0.5">→</span>
-        </div>
-      </Card>
+        </Card>
       </motion.div>
     </Link>
   );
@@ -321,5 +223,3 @@ function ScrollingHighlights() {
     </div>
   );
 }
-
->>>>>>> db1c20f (Update Hero and Home page for better UI UX experience)

@@ -103,7 +103,6 @@ body {
     "Segoe UI", sans-serif;
 }
 
-<<<<<<< HEAD
 html {
   scroll-behavior: smooth;
 }
@@ -115,7 +114,9 @@ html {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-=======
+  }
+}
+
 @keyframes edge-marquee {
   0% {
     transform: translateX(0);
@@ -146,6 +147,5 @@ html {
   .edge-marquee__track {
     animation: none;
     transform: none;
->>>>>>> db1c20f (Update Hero and Home page for better UI UX experience)
   }
 }
