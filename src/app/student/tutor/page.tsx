@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { TopNav } from "../../../components/layout/top-nav";
 import { Button } from "../../../components/ui/button";
@@ -720,58 +720,6 @@ function Whiteboard({ board, stt }: { board: Turn["board"]; stt: SttStatus }) {
           }}
           className="min-h-[220px]"
         >
-          {board.type === "fractionBars" && (
-            <motion.div
-              variants={{ hidden: { opacity: 0, y: 8 }, show: { opacity: 1, y: 0 } }}
-              className="space-y-5"
-            >
-              <FractionBar label={board.aLabel} fill={board.aFill} />
-              <FractionBar label={board.bLabel} fill={board.bFill} />
-              <motion.p
-                variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
-                className="text-sm text-muted"
-              >
-                Visual check: more shaded area → larger value (when the whole is the same).
-              </motion.p>
-            </motion.div>
-          )}
-
-          {board.type === "notes" && (
-            <motion.div
-              variants={{ hidden: { opacity: 0, y: 8 }, show: { opacity: 1, y: 0 } }}
-              className="space-y-3"
-            >
-              <h3 className="text-base font-semibold text-foreground">
-                Key notes
-              </h3>
-              <ul className="list-disc space-y-2 pl-5 text-sm text-foreground">
-                {board.bullets.map((b) => (
-                  <li key={b}>{b}</li>
-                ))}
-              </ul>
-            </motion.div>
-          )}
-
-          {board.type === "numberLine" && (
-            <motion.div
-              variants={{ hidden: { opacity: 0, y: 8 }, show: { opacity: 1, y: 0 } }}
-              className="space-y-4"
-            >
-              <h3 className="text-base font-semibold text-foreground">
-                Number line (0 to 1)
-              </h3>
-              <NumberLine
-                from={board.from}
-                to={board.to}
-                tick={board.tick}
-                highlight={board.highlight}
-              />
-              <p className="text-sm text-muted">
-                Fractions are points on a line—bigger fractions sit further to the right.
-              </p>
-            </motion.div>
-          )}
-
           {board.type === "slide" && <SlideBoard board={board} />}
           {board.type === "passage" && <PassageBoard board={board} />}
         </motion.div>
@@ -828,7 +776,7 @@ function PassageBoard({ board }: { board: Extract<Turn["board"], { type: "passag
   const { paragraphs, highlights, title } = passage;
 
   function renderWithHighlights(text: string) {
-    const nodes: JSX.Element[] = [];
+    const nodes: ReactNode[] = [];
     let remaining = text;
     while (remaining.length) {
       const next = highlights
