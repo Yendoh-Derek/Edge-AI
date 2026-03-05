@@ -67,6 +67,34 @@
       box-shadow: 0 0 0 8px rgba(125, 42, 231, 0);
     }
   }
+
+  @keyframes liquid-wave {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.4;
+    }
+    25% {
+      transform: translateY(-10px) translateX(15px);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translateY(0px) translateX(30px);
+      opacity: 0.4;
+    }
+    75% {
+      transform: translateY(10px) translateX(15px);
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      filter: drop-shadow(0 0 8px rgba(125, 42, 231, 0.2));
+    }
+    50% {
+      filter: drop-shadow(0 0 16px rgba(125, 42, 231, 0.4));
+    }
+  }
 }
 
 body {

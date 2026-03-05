@@ -7,7 +7,7 @@ import { AnimatedBackground } from "../components/animated-background";
 import { HeroHeadline } from "../components/hero-headline";
 import { RoleCard } from "../components/role-card";
 import { MicroHighlight } from "../components/micro-highlight";
-import { HeroImage } from "../components/hero-image";
+import { ImageCarousel } from "../components/image-carousel";
 
 const navItems = [
   { label: "Prices", href: "#prices" },
@@ -22,7 +22,12 @@ export default function Home() {
     <main className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col px-4 pb-10 pt-5 md:px-6 md:pt-10">
       <AnimatedBackground />
 
-      <nav className="relative z-20 flex items-center justify-between border-b border-border-subtle/70 pb-4 md:pb-5">
+      <motion.nav
+        initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="relative z-20 flex items-center justify-between border-b border-white/10 pb-4 md:pb-6 backdrop-blur-sm"
+      >
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -30,13 +35,13 @@ export default function Home() {
         >
           <BrandLogo compact />
         </motion.div>
-        <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted md:gap-x-8 md:text-sm">
+        <ul className="flex flex-wrap items-center gap-x-8 gap-y-2 text-xs text-muted md:gap-x-10 md:text-sm">
           {navItems.map(({ label, href }, index) => (
             <motion.li
               key={label}
-              initial={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + index * 0.05, duration: 0.3 }}
+              transition={{ delay: 0.1 + index * 0.06, duration: 0.4 }}
             >
               <Link
                 href={href}
@@ -44,22 +49,22 @@ export default function Home() {
               >
                 {label}
                 <motion.span
-                  className="absolute bottom-0 left-0 h-0.5 bg-brand"
+                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-brand to-brand/50"
                   initial={{ width: 0 }}
                   whileHover={{ width: "100%" }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
                 />
               </Link>
             </motion.li>
           ))}
         </ul>
-      </nav>
+      </motion.nav>
 
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="relative z-10 flex flex-1 flex-col gap-12 pt-8 md:pt-12 lg:pt-16"
+        className="relative z-10 flex flex-1 flex-col gap-16 pt-10 md:pt-16 lg:pt-20"
       >
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="space-y-8">
@@ -94,7 +99,7 @@ export default function Home() {
             </motion.p>
           </div>
 
-          <HeroImage />
+          <ImageCarousel />
         </div>
 
         <motion.div
